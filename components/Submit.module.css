@@ -1,0 +1,21 @@
+.divSubmit{
+    width: auto;
+    height: 350px;
+    display: flex;
+    flex-direction: column; 
+    align-items: center; /* ROW:Y | COLUMN: X */
+    flex-wrap: wrap;
+}
+
+.boxInput{
+    margin-top: 15px;
+    padding: 15px;
+    border: solid 1px black;
+}
+
+.submitForm{
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+}

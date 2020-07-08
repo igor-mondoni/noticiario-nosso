@@ -1,0 +1,54 @@
+.headerSite{
+    width: 100% auto;
+    height: 50px;
+    background-color: #ff0000a1;
+}
+.menu-top {
+    width: 40vw;
+    height: 100vh;
+    background: #fff;
+    position: absolute;
+    right: -40vw;
+    top: 0;
+    transition: 1.3s;
+}
+
+.menu-top.open {
+    right:0;
+}
+
+
+.links {
+    margin: 0;
+    padding:0;
+}
+
+.links li {
+    display: inline-block;
+    width: 100px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 1em;
+}
+.links li a {
+    color: #f1f1f1;
+    font-family: 'Roboto';
+    text-decoration: none;
+}
+.links li:hover a {
+    border-bottom: solid 3px #f1f1f1;
+    cursor: pointer;
+}
+
+.links li:last-child{
+    float: right;
+}
+
+.logotipo {
+    width: 120px;
+    margin-left: 5%;
+    margin-top: 1%;
+}
+.logotipo img {
+    width: 100%;
+}

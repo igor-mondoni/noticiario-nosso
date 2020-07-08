@@ -1,0 +1,33 @@
+/* zerando browsers */
+@import "../styles/reset.css";
+
+@font-face {
+    font-family: 'calibri';
+    /* font-style: normal; */
+    /* font-weight: 300; */
+    src: url('/assets/fonts/calibri.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'calibri';
+    /* font-style: normal; */
+    font-weight: bold;
+    src: url('/assets/fonts/calibribold.ttf') format('truetype');
+}
+
+html, body {
+    font-family: 'calibri';
+    font-style: normal;
+    /* font-weight: 300; */
+    background-color: white;
+    scroll-behavior: smooth;
+    src: url('/assets/fonts/calibri.ttf') format('truetype');
+}
+@media (min-width: 576px) {
+}
+@media (min-width: 768px) {
+}
+@media (min-width: 992px) {
+}
+@media (min-width: 1200px) {
+}

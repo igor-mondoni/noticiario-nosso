@@ -4,7 +4,9 @@
   "description": "Projeto noticias",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "next dev -p 3200",
+    "build": "next build",
+    "start": "next start"
   },
   "author": "Igor Henrique Mondoni",
   "license": "MIT",
@@ -12,5 +14,9 @@
     "next": "^9.4.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "react-cookie": "^4.0.3"
   }
 }
