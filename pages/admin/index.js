@@ -3,8 +3,9 @@ import Footer from '../../components/Footer'
 import styles from '../../components/Index.module.css'
 import axios from 'axios'
 import { useCookies } from 'react-cookie'
+import handleAuthAdminSSR from '../../utils/authAdmin'
 
-export default function Index() {
+export default function Index({ user}) {
     return (
         <>
             <Header />
@@ -22,4 +23,9 @@ export default function Index() {
             <Footer />
         </>
     )
+}
+
+Index.getInitialProps = async ctx => {
+    const user = await handleAuthAdminSSR(ctx)
+    return { user }
 }

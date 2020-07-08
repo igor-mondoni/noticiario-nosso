@@ -3,12 +3,21 @@ import styles from './Header.module.css'
 import { useCookies } from 'react-cookie'
 import { Cookies } from 'react-cookie'
 import axios from 'axios'
+import Sidebar from './Sidebar'
+import handleAuthSSR from '../utils/auth'
+import { useState } from 'react'
 
 export default function Header(props) {
-//console.log('console1:props.users)
-const usercoook = props.users
-const user = usercoook != '' ? usercoook : ''
-console.log('teste: ',user)
+    const [cookies, setCookie] = useCookies();
+    const usercook = cookies.user
+    let user = usercook != '' ? usercook : ''
+    console.log('header: ', user)
+    const [sidebarShow, setSidebar] = useState(false)
+
+    function toogleSidebar(e) {
+        setSidebar(!sidebarShow)
+    }
+
     return (
         <>
             <Head>
@@ -21,12 +30,10 @@ console.log('teste: ',user)
                         <li><a href="/">Home</a></li>
                         <li><a href="/about">Sobre nós</a></li>
                         <li><a href="/contact">Contato</a></li>
-                        <li>{user ? <><select name="navegar" id="nav">
-                            <option value="">pera ae</option>
-                            <option value="">Editar perfil</option>
-                            <option value="">Mudar senha</option>
-                            <option value="">Sair</option>
-                        </select> </>: <a href="/login">Logar</a>}</li>
+                        <li>
+                        </li>
+                        <li>{user ? <><button onClick={toogleSidebar} className={styles["menu"]}><img srcSet="/photos/click.svg" id={styles.icon} /></button><Sidebar userInfo={user} show={sidebarShow} toogleSidebar={toogleSidebar} />
+                        </> : <a href="/login">Logar</a>}</li>
                     </ul>
                 </nav>
             </header>

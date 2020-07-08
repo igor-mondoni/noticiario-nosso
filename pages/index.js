@@ -6,12 +6,10 @@ import handleAuthSSR from '../utils/auth'
 import axios from 'axios'
 
 export default function Index({ posts }) {
-    const [cookies, setCookie] = useCookies();
-    const usercook = cookies.user
-    let user =  usercook ? usercook : ''
+    
     return (
         <>
-            <Header users={user}/>
+            <Header />
             <div className={styles.grid_container}>
                 <div className={styles.nav}>
                     <div className={styles.navbar}><a href="#">Politica</a></div>
