@@ -19,3 +19,7 @@
     justify-content: flex-start;
     align-items: flex-end;
 }
+
+.infoname{
+    width: 100vw;
+}

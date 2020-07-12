@@ -1,5 +1,6 @@
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import Submit from '../components/Submit'
 import styles from '../components/Index.module.css'
 import { useCookies } from 'react-cookie'
 import handleAuthSSR from '../utils/auth'
@@ -25,7 +26,7 @@ export default function Index({ posts }) {
                                 <h1> {post.title}</h1>
                                 <h3> {post.subtitle}</h3>
                                 <p> {post.post}</p>
-                                <button>Leia mais</button>
+                                <Submit text="Leia mais!" action="show" model="post" id={post.id}/>
                             </div>
                             
                         ))

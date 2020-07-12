@@ -7,7 +7,7 @@ import axios from 'axios'
 
 export default function Add(props) {
 
-    const [values, setValues] = useState({ title:'', subtitle: '', post:'' })
+    const [values, setValues] = useState({ title:'', subtitle: '', post:'', category: '' })
 
     const handleInputChange = e => {
         const { name, value } = e.target
@@ -33,6 +33,7 @@ export default function Add(props) {
 
                     <Input type="text" name="title" onChange={handleInputChange} required={true} onFocus={handleInputChange} label="Titulo" />
                     <Input type="text" name="subtitle" onChange={handleInputChange} required={true} onFocus={handleInputChange} label="Sub-titulo" />
+                    <Input type="text" name="category" onChange={handleInputChange} required={true} onFocus={handleInputChange} label="category" />
                     <Input type="text" name="post" onChange={handleInputChange} required={true} onFocus={handleInputChange} label="Descreva" />
                 </div>
                 <button type="submit">Enviar</button>

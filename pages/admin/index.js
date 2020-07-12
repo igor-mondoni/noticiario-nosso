@@ -5,20 +5,43 @@ import axios from 'axios'
 import { useCookies } from 'react-cookie'
 import handleAuthAdminSSR from '../../utils/authAdmin'
 
-export default function Index({ user}) {
+export default function Index({ user }) {
     return (
         <>
             <Header />
-            <div>
-                <h1>Seja bem vindo, usuário!</h1>
-                <ul>
-                <li><a href="/admin/contact">Mensagens</a></li>
-                    <li><a href="/admin/posts/add">Cadastrar posts</a></li>
-                    <li><a href="/admin/posts">Ver posts</a></li>
-                    <li><a href="/admin/users/add">Cadastrar usuario administrador</a></li>
-                    <li><a href="/admin/users">Ver usuarios</a></li>
-                    <li><a href="/alter">Perfil</a></li>
-                </ul>
+            <div className={styles.sectionAdmin}>
+                <div className={styles.cabecalho}>
+                    <h1>Seja bem vindo, {user.completename}!</h1>
+                </div>
+
+                <div className={styles.item}>
+                    <img srcSet="/photos/chat.svg" />
+                    <a href="/admin/contact">Mensagens</a>
+                </div>
+                <div className={styles.item}>
+                    <img srcSet="/photos/list.svg" />
+                    <a href="/admin/category">Categorias das postagens</a>
+                </div>
+                <div className={styles.item}>
+                    <img srcSet="/photos/article.svg" />
+                    <a href="/admin/posts/add">Cadastrar posts</a>
+                </div>
+                <div className={styles.item}>
+                    <img srcSet="/photos/article.svg" />
+                    <a href="/admin/posts">Ver posts</a>
+                </div>
+                <div className={styles.item}>
+                    <img srcSet="/photos/user2.svg" />
+                    <a href="/admin/users/add">Cadastrar usuario administrador</a>
+                </div>
+                <div className={styles.item}>
+                    <img srcSet="/photos/user.svg" />
+                    <a href="/admin/users">Ver usuarios</a>
+                </div>
+                <div className={styles.item}>
+                    <img srcSet="/photos/profile.svg" />
+                    <a href="/alter">Perfil</a>
+                </div>
             </div>
             <Footer />
         </>

@@ -3,6 +3,7 @@ import styles from './Header.module.css'
 import { useCookies } from 'react-cookie'
 import { Cookies } from 'react-cookie'
 import axios from 'axios'
+import Link from 'next/link'
 import Sidebar from './Sidebar'
 import handleAuthSSR from '../utils/auth'
 import { useState } from 'react'
@@ -21,20 +22,16 @@ export default function Header(props) {
     return (
         <>
             <Head>
-                <link rel="shortcut icon" href="" />
-                <title>Big Noticias</title>
+                <link rel="shortcut icon" href="photos/fake-news.svg" />
+                <title>Fakenius</title>
             </Head>
             <header className={styles.headerSite}>
                 <nav>
-                    <ul className={styles.links}>
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/about">Sobre nós</a></li>
-                        <li><a href="/contact">Contato</a></li>
-                        <li>
-                        </li>
-                        <li>{user ? <><button onClick={toogleSidebar} className={styles["menu"]}><img srcSet="/photos/click.svg" id={styles.icon} /></button><Sidebar userInfo={user} show={sidebarShow} toogleSidebar={toogleSidebar} />
-                        </> : <a href="/login">Logar</a>}</li>
-                    </ul>
+                    <div>
+                        <button onClick={toogleSidebar} className={styles["menu"]}><img srcSet="/photos/click.svg" id={styles.icon} /></button><Sidebar userInfo={user} show={sidebarShow} toogleSidebar={toogleSidebar} />
+                    </div>
+                    <div><Link href="/" ><a><img srcSet="photos/fake-news.svg" /></a></Link>
+                    </div>
                 </nav>
             </header>
 

@@ -24,10 +24,10 @@ export default async function handleAuthAdminSSR(ctx) {
         }
     } catch (err) {
         if (ctx.res) {
-            ctx.res.writeHead(302, { Location: '/' })
+            ctx.res.writeHead(302, { Location: '/login' })
             ctx.res.end()
         } else {
-            Router.push('/')
+            Router.push('/login')
         }
     }
 

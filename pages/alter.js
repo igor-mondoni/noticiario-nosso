@@ -34,25 +34,25 @@ export default function Alter({ user }) {
             <div className={styles.submitForm}>
                 <form onSubmit={handleRegister}>
                     <div className={styles.inputSubmit}>
-                        <Input type="text" name="username" onChange={handleInputChange} required={true} onFocus={handleInputChange} label="Nome de usuário*" />
+                        <Input type="text" name="username" onChange={handleInputChange} required={false} onFocus={handleInputChange} label="Nome de usuário*" placehold={user.username} />
                     </div>
                     <div className={styles.inputSubmit}>
-                        <Input type="text"  name="completename" onChange={handleInputChange} required={true} onFocus={handleInputChange} label="Nome Completo*" />
+                        <Input type="text"  name="completename" onChange={handleInputChange} required={false} onFocus={handleInputChange} label="Nome Completo*" placehold={user.completename}/>
                     </div>
                     <div className={styles.inputSubmit}>
-                        <Input type="text" name="doc_number" onChange={handleInputChange} required={true} onFocus={handleInputChange} label="Documento (cpf ou rg)*" />
+                        <Input type="text" name="doc_number" onChange={handleInputChange} required={false} onFocus={handleInputChange} label="Documento (cpf ou rg)*" placehold={user.doc_number}/>
                     </div>
                     <div className={styles.inputSubmit}>
-                        <Input type="text" name="address" onChange={handleInputChange} required={true} onFocus={handleInputChange} label="Endereço 1*" />
+                        <Input type="text" name="address" onChange={handleInputChange} required={false} onFocus={handleInputChange} label="Endereço 1*" placehold={user.address}/>
                     </div>
                     <div className={styles.inputSubmit}>
-                        <Input type="text" name="address2" onChange={handleInputChange} required={false} onFocus={handleInputChange} label="Endereço 2" />
+                        <Input type="text" name="address2" onChange={handleInputChange} required={false} onFocus={handleInputChange} label="Endereço 2" placehold={user.address2}/>
                     </div>
                     <div className={styles.inputSubmit}>
-                        <Input type="date" name="birth_date" onChange={handleInputChange} required={true} onFocus={handleInputChange} label="data de nascimento" />
+                        <Input type="date" name="birth_date" onChange={handleInputChange} required={false} onFocus={handleInputChange} label="data de nascimento" placehold={user.birth_date}/>
                     </div>
                     <div className={styles.inputSubmit}>
-                        <Input type="email" name="email" label="Email" required={true} onChange={handleInputChange} onFocus={handleInputChange} />
+                        <Input type="email" name="email" label="Email" required={false} onChange={handleInputChange} onFocus={handleInputChange} placehold={user.email}/>
                     </div>
                     <Button text="Cadastrar" />
                 </form>

@@ -1,7 +1,7 @@
 import styles from './Button.module.css'
 import { useRouter } from 'next/router'
 import axios from 'axios'
-import serverUrl from '../../utils/env'
+import serverUrl from '../utils/env'
 
 
 export default function Submit(props){
@@ -13,9 +13,11 @@ export default function Submit(props){
                 console.log(`tela add ${props.model}`)
                 break
             case "show":
-                await axios.put(`${serverUrl}/admin/users/${props.id}`, props.values).then((res)=>(
-                    console.log("salvando Alteraçoes")
-                ))
+            Router.push(`/post/${props.id}`)    
+            //await axios.get(`${serverUrl}/posts/${props.id}`).then((res)=>(
+                //
+                //Router.push('/post')
+                //))
                 
                 break
             case "passwordChange":
