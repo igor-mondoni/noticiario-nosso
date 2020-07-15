@@ -12,21 +12,18 @@ export default function Index({ posts }) {
         <>
             <Header />
             <div className={styles.grid_container}>
-                <div className={styles.nav}>
-                    <div className={styles.navbar}><a href="#">Politica</a></div>
-                    <div className={styles.navbar}><a href="#">Jogos</a></div>
-                    <div className={styles.navbar}><a href="#">Atualidade</a></div>
-                    <div className={styles.navbar}><a href="#">Musica</a></div>
-                    <div className={styles.navbar}><a href="#">Outros</a></div>
-                </div>
+                
                 <div className={styles.section}>
                     {posts.length > 0 ?
                         posts.map((post, index) => (
                             <div className={styles.cardsPosts} key={index}>
+                                <div className={styles.imagepost}></div>
+                                <div className={styles.textpost}>
                                 <h1> {post.title}</h1>
                                 <h3> {post.subtitle}</h3>
                                 <p> {post.post}</p>
                                 <Submit text="Leia mais!" action="show" model="post" id={post.id}/>
+                                </div>
                             </div>
                             
                         ))

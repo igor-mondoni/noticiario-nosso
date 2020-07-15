@@ -29,23 +29,25 @@ export default function Login() {
                 (res) => {
                     const { token } = res.data.token
                     const usertype = res.data.user.usertype
-                    const userdata = {"name":res.data.user.completename,
-                    "email":res.data.user.email,
-                    "username":res.data.user.username}
+                    const userdata = {
+                        "name": res.data.user.completename,
+                        "email": res.data.user.email,
+                        "username": res.data.user.username
+                    }
                     console.log(userdata.name)
                     cookies.set('token', token)
                     cookies.set('user', userdata)
-                    
+
                     switch (usertype) {
                         case 'admin':
                             Router.push('/admin')
                             break;
-                            case 'user':
-                                Router.push('/')
-                                break;
-                                default:
-                                    alert('ERRO FATAL, VOCE VAI MORRE')
-                                    break;
+                        case 'user':
+                            Router.push('/')
+                            break;
+                        default:
+                            alert('ERRO FATAL, VOCE VAI MORRE')
+                            break;
                     }
                 }
             ).catch(err => alert("Usuário não encontrado, tente novamente e se o problema persistir contate um administrador ", err))
@@ -56,10 +58,10 @@ export default function Login() {
             <Header />
             <div className={styles.divSubmit}>
                 <div className={styles.boxInput}>
+                    <div className={styles.submitForm}>
+                        <img src="/photos/user.svg"></img>
+                    </div>
                     <form onSubmit={handleLogin}>
-                        <div className={styles.submitForm}>
-                            <img src="/photos/user.svg"></img>
-                        </div>
                         <div className={styles.submitForm}>
                             <Input type="email" name="email" label="Email" required={true} onChange={handleInputChange} onFocus={handleInputChange} />
                         </div>

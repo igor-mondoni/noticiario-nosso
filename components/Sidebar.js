@@ -1,5 +1,6 @@
 import styles from './Sidebar.module.css'
 import Link from 'next/link'
+import Submit from '../components/Submit'
 import { useState } from 'react'
 import { Cookies } from 'react-cookie'
 import { useCookies } from 'react-cookie'
@@ -10,7 +11,7 @@ import serverUrl from '../utils/env'
 
 export default function sideBar(props) {
 
-    console.log("no sidebar ", props.userInfo)
+    console.log("no sidebar id ", props.id)
     const cookies = new Cookies();
     //const [values, setValues] = useState({ email: '' })
     // const resp = axios.get(serverUrl + '/users/permission', values)
@@ -32,7 +33,7 @@ export default function sideBar(props) {
                         <li><h1>{props.userInfo.name}</h1></li>
                         <li><p>{props.userInfo.username}</p></li>
                         <li><p>{props.userInfo.email}</p></li>
-                        <li>alterar informações</li>
+                        <li><Link href="/alter" ><a>Alterar dados cadastrais</a></Link></li>
                         <li>Alterar senha</li>
                         <li><p><button className={styles.btnloginsidebar} onClick={logout}>Logout</button></p></li>
                         <hr/></>

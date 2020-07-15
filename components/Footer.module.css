@@ -1,16 +1,174 @@
-.faceicon{
-    width:30px;
-    height:30px;
+.fundogray {
+    background-color: #242424;
+    display: flex;
+    padding: 20px 0px;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    left: 0;
+}
+
+.fundogray > p{text-align: start;}
+
+.icons {
+    display:flex;
+    flex-direction: row;
+}
+
+.faceicon {
+    width: 50px;
+    height: 50px;
+    transition: 0.8s;
 }
 .faceicon img{
+    width: 100%;
     height: 100%;
-    width:100%
+}
+
+.faceicon:hover {
+    background-color: rgba(189, 184, 184, 0.178);
+    border-radius: 5px;
+}
+
+.titulo {
+    font-weight: bold;
+    color: #f7c926;
+    margin-block-start: 0;
+    padding-left: 55px;
+    padding-top: 15px;
+}
+
+.quadrado {
+    width: 40px;
+    height: 50px;
+    background-color: #f7c926;
+    position: absolute;
+    top: 42px;
+    left: 25px;
+}
+
+.subtitulo {
+    font-weight: bold;
+    font-size: 20px;
+    color: #f15000;
+}
+
+.conteudo {
+    font-size: 20px;
+    color: white;
+}
+
+.navinferior {
+    padding-right: 30px;
+}
+
+#iconseta {
+    width: 13px;
+    margin-right: 5px;
+}
+
+.linksuteis {
+    display: flex;
+    flex-direction: column;
+    margin-left: 25px;
+}
+
+.linkcontato {
+    display: flex;
+}
+
+.conteudologo {
+    font-size: 14px;
+    color: white;
+    padding-right: 20px;
+}
+
+
+.listalinks {
+    margin-left: 0;
+    font-size: 20px;
+    list-style: none;
+    padding-inline-start: 0;
+}
+
+.listalinks li a {
+    text-decoration: none;
+    color: white;
+}
+
+.listalinks li {
+    padding-top: 6.5px;
+}
+
+.ulbuttonsocial {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 50px;
+}
+
+.listasociais {
+    margin-left: 0;
+    font-size: 25px;
+    list-style: none;
+    padding-inline-start: 0;
+}
+
+.listasociais li a {
+    text-decoration: none;
+    color: #f15000;
+}
+
+.listasociais li {
+    display: inline;
+    padding-right: 8px;
+    padding-top: 5px;
+}
+
+.botaosocial {
+	background-color:#030303;
+	display:inline-block;
+	cursor:pointer;
+	color:#ff6f00;
+	font-family:Arial;
+	font-size:17px;
+	padding:9px 13px;
+	text-decoration:none;
+}
+
+.botaosocial:hover {
+	background-color:#303030;
+}
+
+.botaosocial:active {
+	position:relative;
+	top:1px;
+}
+
+
+#icon {
+    width: 50px;
+    height: 50px;
+}
+
+#iconsocial {
+    width: 35px;
+    height: 35px;
+}
+
+.textologo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 45px;
+    text-align: end;
+    padding-top: 160px;
 }
 
 .fundopreto {
-    background-color: orangered;
+    background-color: black;
     width: 100%;
-    height: 170px;
+    height: 90px;
 }
 
 .fundopreto h1 {
@@ -22,11 +180,55 @@
     margin-block-start: 0;
     margin-block-end: 0;
 }
-.icons{
-    width: 200px;
-    display: flex;
-    flex-direction: row; 
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
+
+.logorodape {
+    width: 85px;
+}
+
+@media (max-width: 1400px) {
+    .fundogray {
+        flex-direction: column;
+    }
+
+    .linkcontato {
+        justify-content: center;
+    }
+
+    .ulbuttonsocial {
+        text-align: center;
+    }
+
+    .conteudologo {
+        margin-left: 25px;
+    }
+
+    .textologo {
+        padding-top: 35px;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 500px) {
+    #iconsocial {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+@media (max-width: 410px) {
+    #iconsocial {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media (max-width: 322px) {
+    #iconsocial {
+        width: 10px;
+        height: 10px;
+    }
+
+    #iconseta {
+        display: none;
+    }
 }

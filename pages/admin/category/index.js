@@ -8,12 +8,11 @@ export default function Category({category}){
         <>
         <Header/>
        <div>
-                    {posts.length > 0 ?
-                        posts.map((post, index) => (
+                    {category.length > 0 ?
+                        category.map((categorys, index) => (
                             <div  key={index}>
-                                <h1> {post.title}</h1>
-                                <h3> {post.subtitle}</h3>
-                                <p> {post.post}</p>
+                                <h1> {categorys.title}</h1>
+                                <h3> {categorys.subtitle}</h3>
                                 <button>Leia mais</button>
                             </div>
                             

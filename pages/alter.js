@@ -22,7 +22,7 @@ export default function Alter({ user }) {
     const handleRegister = e => {
         e.preventDefault()
 
-        axios.post(`http://127.0.0.1:3333/users/profile/${user.id}`, values)
+        axios.put(`http://127.0.0.1:3333/users/profile/${user.id}`, values)
             .then(res => {
                 alert('alterado!')
             }).catch(err => alert("Deu ruim", err.message))

@@ -25,17 +25,20 @@ export default function Header(props) {
                 <link rel="shortcut icon" href="photos/fake-news.svg" />
                 <title>Fakenius</title>
             </Head>
-            <header className={styles.headerSite}>
-                <nav>
-                    <div>
-                        <button onClick={toogleSidebar} className={styles["menu"]}><img srcSet="/photos/click.svg" id={styles.icon} /></button><Sidebar userInfo={user} show={sidebarShow} toogleSidebar={toogleSidebar} />
-                    </div>
-                    <div><Link href="/" ><a><img srcSet="photos/fake-news.svg" /></a></Link>
-                    </div>
-                </nav>
+            <header>
+                <Link href="/">
+                    <a>
+                        <img className={styles.logo} srcSet="/photos/fake-news.svg" id="logo" alt="Logo" />
+                    </a>
+                </Link>
+                <div className={styles.headerfundo}>
+                    <button onClick={toogleSidebar} className={styles.menu}><img srcSet="/photos/click.svg" id={styles.icon} /></button>
+                    <Sidebar show={sidebarShow} toogleSidebar={toogleSidebar} />
+                </div>
+
+
+
             </header>
-
-
         </>
     )
 }

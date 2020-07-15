@@ -1,21 +1,156 @@
-.headerSite{
-    width: 100% auto;
-    height: 50px;
-    border: solid black 1px;
-    text-align: center;
-    background-color: #ff0000a1;
+.headerfundo {
+    background-color: black;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top:0;
+    height: 200px;
+    display: flex;
+    justify-content: space-between;
 }
 
-.headerSite div:first-child{
-    float: left;
+.logo {
+    width: 200px;
+    margin-left: 40% !important; 
+    margin-top: 10px;
+    position: fixed;
 }
 
-.headerSite img{
-
-    max-width: 65px;
-    max-height: 40px;
+#icon {
+    width: 25px;
+    height: 25px;
 }
 
-.menu{
-    background-color: blue;
+.navbar {
+    list-style: none;
+    color: red;
+    font-size: 22px;
+    width: 100%;
+    position: absolute;
+    top: 95px;
+    left: -2%;
+    text-align: end;
+    
+}
+
+.navbar li {
+    display: inline;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+.navbar a {
+    font-family: 'calibri';
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+}
+
+.navbar a:hover {
+    border-bottom: 5px solid #f15000;
+}
+
+.btnlogin {
+    position: absolute;
+    right: 5em;
+    top: -5px;
+	background-color:#242424;
+	border-radius:10px;
+	display:inline-block;
+	cursor:pointer;
+	color:#f15000;
+	font-family:Arial;
+	font-size:15px;
+	padding:5px 5px;
+	text-decoration:none;
+}
+.btnlogin:hover {
+	background-color:#2e2e2e;
+}
+.btnlogin:active {
+	position: absolute;;
+	top:-3px;
+}
+
+.menu {
+	background-color:#3d3d3d;
+	border-radius:13px;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:0px;
+	padding:10px 10px;
+    text-decoration:none;
+    border-width: 0;
+    outline: none;
+}
+
+@media (max-width: 1400px) {
+    .logo {
+        width: 120px;
+        z-index: 80;
+        margin-left: 8%;
+        margin-top: 10px;
+        position: absolute;
+    }
+
+    .headerfundo {
+        height: 120px;
+    }
+
+    .navbar {
+        top: 50px;
+    }
+}
+
+@media (max-width: 1150px) {
+    .navbar li {
+        padding-left: 1.2em;
+        padding-right: 1.2em;
+    }
+}
+
+@media (max-width: 950px) {
+    .navbar {
+        display: none;
+    }
+
+    .btnlogin {
+        display: none;
+    }
+
+    .menu {
+        display: initial;
+        position: absolute;
+        right: 20px;
+        top: 30px;
+    }
+
+    #icon {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        width: 80px;
+        z-index: 80;
+        margin-left: 8%;
+        margin-top: 10px;
+        position: absolute;
+    }
+
+    .menu {
+        display: initial;
+        position: absolute;
+        right: 20px;
+        top: 30px;
+    }
+}
+
+@media (max-width: 340px) {
+    .menu {
+        padding:6px 6px;
+    }
 }

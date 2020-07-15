@@ -4,27 +4,25 @@ import axios from 'axios'
 import serverUrl from '../utils/env'
 
 
-export default function Submit(props){
+export default function Submit(props) {
     const Router = useRouter()
-    const handleClick = async e=>{
-        switch(props.action) {
+    const handleClick = async e => {
+        switch (props.action) {
             case "Adicionar":
                 Router.push(`/admin/${props.model}/add`)
                 console.log(`tela add ${props.model}`)
                 break
             case "show":
-            Router.push(`/post/${props.id}`)    
-            //await axios.get(`${serverUrl}/posts/${props.id}`).then((res)=>(
-                //
-                //Router.push('/post')
-                //))
-                
+                Router.push(`/post/${props.id}`)
+                break
+                case "showuser":
+                Router.push(`/user/${props.id}`)
                 break
             case "passwordChange":
-                await axios.put(`${serverUrl}/admin/${props.model}/${props.id}`, props.values).then((res)=>(
+                await axios.put(`${serverUrl}/admin/${props.model}/${props.id}`, props.values).then((res) => (
                     console.log("salvando senha")
                 ))
-                
+
                 break
             case `new${props.model}`:
                 await axios.put(`${serverUrl}/admin/${props.model}`, props.values)
@@ -34,19 +32,20 @@ export default function Submit(props){
                 Router.push(`/admin/${props.model}/${props.id}`)
                 break
             case "delete":
-                if (confirm("Tem certeza que deseja excluir?")){
-                    await axios.delete(`${serverUrl}/admin/${props.model}/${props.id}`).then(res=>{
-                        alert(`Sucesso! ${props.model} com id: ${props.id} Deletado.`  )
+                if (confirm("Tem certeza que deseja excluir?")) {
+                    await axios.delete(`${serverUrl}/admin/${props.model}/${props.id}`).then(res => {
+                        alert(`Sucesso! ${props.model} com id: ${props.id} Deletado.`)
                         Router.push(`/admin/${props.model}`)
-                    }).catch(err=>{alert("Deu ruim")}) }
+                    }).catch(err => { alert("Deu ruim") })
+                }
                 break
             case "Teste":
                 console.log(`Teste OK ${props.id}`)
                 break
-        
+
         }
     }
-    return(
-        <button className={styles.button} onClick={ props.click ? props.click :handleClick } >{props.text}</button>
+    return (
+        <button className={styles.button} onClick={props.click ? props.click : handleClick} >{props.text}</button>
     )
 }
